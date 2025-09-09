@@ -1,5 +1,3 @@
-Here’s a clean, ready-to-paste **README.md** in English for your project.
-
 ---
 
 # Qwen2.5-0.5B + QLoRA — Training & Inference (HF Spaces + FastAPI)
@@ -14,6 +12,11 @@ End-to-end template to **train a QLoRA adapter** and **serve it**:
 > Supports **private adapter repos** (HF token), streaming, and Space cache fixes.
 
 ---
+
+# Qwen2.5-0.5B + QLoRA — Training & Inference
+
+🚀 Live demo available here: [Hugging Face Space](https://huggingface.co/spaces/naufaldewanto37/Chatbot)
+
 
 ## Suggested Repository Structure
 
@@ -242,3 +245,4 @@ Add a license that fits your project (e.g., MIT/Apache-2.0).
 * [PEFT](https://github.com/huggingface/peft) · [TRL](https://github.com/huggingface/trl) · [Gradio](https://gradio.app/)
 
 ---
+
