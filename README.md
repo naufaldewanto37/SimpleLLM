@@ -13,11 +13,6 @@ End-to-end template to **train a QLoRA adapter** and **serve it**:
 
 ---
 
-# Qwen2.5-0.5B + QLoRA — Training & Inference
-
-🚀 Live demo available here: [Hugging Face Space](https://huggingface.co/spaces/naufaldewanto37/Chatbot)
-
-
 ## Suggested Repository Structure
 
 ```
@@ -245,4 +240,5 @@ Add a license that fits your project (e.g., MIT/Apache-2.0).
 * [PEFT](https://github.com/huggingface/peft) · [TRL](https://github.com/huggingface/trl) · [Gradio](https://gradio.app/)
 
 ---
+
 
