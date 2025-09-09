@@ -1,4 +1,16 @@
 ---
+title: Qwen2.5-0.5B + QLoRA (Gradio UI)
+emoji: 🧠
+colorFrom: indigo
+colorTo: purple
+sdk: gradio
+sdk_version: "4.44.0"
+app_file: space_app.py
+pinned: false
+---
+
+
+---
 
 # Qwen2.5-0.5B + QLoRA — Training & Inference (HF Spaces + FastAPI)
 
@@ -12,6 +24,11 @@ End-to-end template to **train a QLoRA adapter** and **serve it**:
 > Supports **private adapter repos** (HF token), streaming, and Space cache fixes.
 
 ---
+
+# Qwen2.5-0.5B + QLoRA — Training & Inference
+
+🚀 Live demo available here: [Hugging Face Space](https://huggingface.co/spaces/naufaldewanto37/Chatbot)
+
 
 ## Suggested Repository Structure
 
@@ -240,5 +257,6 @@ Add a license that fits your project (e.g., MIT/Apache-2.0).
 * [PEFT](https://github.com/huggingface/peft) · [TRL](https://github.com/huggingface/trl) · [Gradio](https://gradio.app/)
 
 ---
+
 
 
