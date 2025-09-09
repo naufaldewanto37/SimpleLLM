@@ -245,9 +245,6 @@ curl -X POST "http://localhost:8000/generate" \
 
 ---
 
-## License
-
-Add a license that fits your project (e.g., MIT/Apache-2.0).
 
 ---
 
@@ -257,6 +254,7 @@ Add a license that fits your project (e.g., MIT/Apache-2.0).
 * [PEFT](https://github.com/huggingface/peft) · [TRL](https://github.com/huggingface/trl) · [Gradio](https://gradio.app/)
 
 ---
+
 
 
 
