@@ -20,7 +20,7 @@ except:
     docx = None
 
 BASE = "Qwen/Qwen2.5-0.5B-Instruct"
-ADAPTER = "outputs-qwen25-05b-qlora"
+ADAPTER = "qwen25-05b-qlora"
 
 tok = AutoTokenizer.from_pretrained(BASE, use_fast=True)
 if tok.pad_token is None:
@@ -89,25 +89,25 @@ def summarize_text(text: str, bullets: bool = True, max_new_tokens: int = 256) -
     partial = []
     for i, c in enumerate(chunks, 1):
         instr = (
-            "Ringkas bagian dokumen berikut. Fokuskan pada poin penting, entitas, angka, dan kesimpulan. "
-            "Hasilkan ringkasan singkat (5–8 bullet) jika memungkinkan.\n\n"
-            f"=== BAGIAN {i}/{len(chunks)} ===\n{c}"
+            "Summary this document. Focust on key points, entities, numbers, and conclusions. "
+            "Give Output 5-8 Point \n\n"
+            f"=== Section {i}/{len(chunks)} ===\n{c}"
         )
         summary = chat_generate(SYS_SUMMARY, instr, max_new_tokens=max_new_tokens)
         partial.append(summary)
 
     join = "\n\n".join(f"- {s}" for s in partial)
     final_instr = (
-        "Gabungkan ringkasan parsial menjadi satu ringkasan komprehensif, terstruktur, dan padat.\n"
-        "Sertakan: tujuan dokumen, poin utama, metrik/angka penting, dan rekomendasi/aksi (bila ada)."
-        + ("\nOutput dalam bullet points rapi." if bullets else "")
-        + "\n\nRINGKASAN PARSIAL:\n" + join
+        "Assemble a comprehensive, structured, and concise summary from the partial summaries below.\n "
+        "Give, what is the most important information from the document.\n"
+        + ("\nOutput at points" if bullets else "")
+        + "\n\nPartial Summary:\n" + join
     )
     return chat_generate(SYS_SUMMARY, final_instr, max_new_tokens=max_new_tokens)
 
 def read_pdf(file: UploadFile) -> str:
     if PdfReader is None:
-        raise RuntimeError("pypdf belum terpasang. pip install pypdf")
+        raise RuntimeError("pypdf not installed. pip install pypdf")
     data = BytesIO(file.file.read())
     pdf = PdfReader(data)
     texts = []
@@ -118,7 +118,7 @@ def read_pdf(file: UploadFile) -> str:
 
 def read_docx(file: UploadFile) -> str:
     if docx is None:
-        raise RuntimeError("python-docx belum terpasang. pip install python-docx")
+        raise RuntimeError("python-docx not installed. pip install python-docx")
     data = BytesIO(file.file.read())
     d = docx.Document(data)
     return "\n".join(p.text for p in d.paragraphs)
