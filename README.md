@@ -81,6 +81,9 @@ datasets>=2.20.0
 bitsandbytes>=0.43.0
 safetensors>=0.4.3
 huggingface-hub>=0.24.5
+pypdf
+python-multipart
+python-docx
 ```
 
 ---
@@ -109,21 +112,14 @@ python scripts/parsing_dataset.py
 {"instruction":"...", "input":"...", "output":"..."}
 ```
 
-### 2) Build Chat Text (prompt templating)
-
-```bash
-python training/prompt_format.py
-# adds a 'text' field using your chat template
-```
-
-### 3) Train QLoRA
+### 2) Train QLoRA
 
 ```bash
 python training/train_qlora.py
 # output adapter: outputs-qwen25-05b-qlora/
 ```
 
-### 4) Upload Adapter to Hugging Face Hub
+### 3) Upload Adapter to Hugging Face Hub
 
 ```bash
 huggingface-cli login
@@ -254,6 +250,7 @@ curl -X POST "http://localhost:8000/generate" \
 * [PEFT](https://github.com/huggingface/peft) · [TRL](https://github.com/huggingface/trl) · [Gradio](https://gradio.app/)
 
 ---
+
 
 
 
