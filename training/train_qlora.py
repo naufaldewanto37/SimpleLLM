@@ -8,7 +8,7 @@ from peft import LoraConfig
 from prompt_format import format_example
 
 BASE = "Qwen/Qwen2.5-0.5B-Instruct"
-OUTPUT_DIR = "outputs-qwen25-05b-qlora"
+OUTPUT_DIR = "qwen25-05b-qlora"
 
 def main():
     # 1) Tokenizer

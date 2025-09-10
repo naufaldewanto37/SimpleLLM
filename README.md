@@ -16,7 +16,7 @@ pinned: false
 
 End-to-end template to **train a QLoRA adapter** and **serve it**:
 
-* 🧪 Train with TRL/PEFT → saves adapter to `outputs-qwen25-05b-qlora/`
+* 🧪 Train with TRL/PEFT → saves adapter to `qwen25-05b-qlora/`
 * ☁️ Upload adapter to **Hugging Face Hub**
 * 🖥️ Inference via **Hugging Face Spaces (Gradio UI)** or a **FastAPI API**
 
